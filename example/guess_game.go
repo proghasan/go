@@ -12,7 +12,7 @@ const prompt = "and don't type number in, just press ENTER when ready."
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
-	var firstName = rand.Intn(8) + 2
+	var firstNumber = rand.Intn(8) + 2
 	var secondNumber = rand.Intn(8) + 2
 	var subtraction = rand.Intn(8) + 2
 	var answer int
@@ -29,7 +29,7 @@ func main() {
 	reader.ReadString('\n')
 
 	// take game through the games
-	fmt.Println("Multiply your number by", firstName, prompt)
+	fmt.Println("Multiply your number by", firstNumber, prompt)
 	reader.ReadString('\n')
 
 	fmt.Println("Now multiply the result by", secondNumber, prompt)
@@ -42,7 +42,7 @@ func main() {
 	reader.ReadString('\n')
 
 	// give them the answer
-	answer = firstName*secondNumber - subtraction
+	answer = firstNumber*secondNumber - subtraction
 	fmt.Println("The result is", answer)
 
 }
