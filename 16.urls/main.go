@@ -20,4 +20,22 @@ func main() {
 	fmt.Println(requestUrl.Path)
 	fmt.Println(requestUrl.Port())
 	fmt.Println(requestUrl.RawQuery)
+	qparams := requestUrl.Query()
+	fmt.Printf("The type of query params are: %T\n", qparams)
+
+	fmt.Println("Single params", qparams["coursename"])
+
+	for _, value := range qparams {
+		fmt.Println("Params are: ", value)
+	}
+
+	partOfUrl := &url.URL{
+		Scheme:  "https",
+		Host:    "lco.dev",
+		Path:    "/tutcss",
+		RawPath: "user=hasan",
+	}
+
+	anotherUrl := partOfUrl.String()
+	fmt.Println("Another Url: ", anotherUrl)
 }
